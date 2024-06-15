@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		24C219F52C1BD09F005E339B /* EverandReadingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C219F42C1BD09F005E339B /* EverandReadingApp.swift */; };
-		24C219F72C1BD09F005E339B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C219F62C1BD09F005E339B /* ContentView.swift */; };
 		24C219F92C1BD0A1005E339B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C219F82C1BD0A1005E339B /* Assets.xcassets */; };
 		24C219FC2C1BD0A1005E339B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C219FB2C1BD0A1005E339B /* Preview Assets.xcassets */; };
 		24C21A062C1BD0A3005E339B /* EverandReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A052C1BD0A3005E339B /* EverandReadingTests.swift */; };
@@ -44,7 +43,6 @@
 /* Begin PBXFileReference section */
 		24C219F12C1BD09F005E339B /* EverandReading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverandReading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C219F42C1BD09F005E339B /* EverandReadingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverandReadingApp.swift; sourceTree = "<group>"; };
-		24C219F62C1BD09F005E339B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		24C219F82C1BD0A1005E339B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C219FB2C1BD0A1005E339B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		24C21A012C1BD0A3005E339B /* EverandReadingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverandReadingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +110,6 @@
 			children = (
 				24C21A1E2C1BD16D005E339B /* Screens */,
 				24C219F42C1BD09F005E339B /* EverandReadingApp.swift */,
-				24C219F62C1BD09F005E339B /* ContentView.swift */,
 				24C219F82C1BD0A1005E339B /* Assets.xcassets */,
 				24C219FA2C1BD0A1005E339B /* Preview Content */,
 			);
@@ -338,7 +335,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C21A322C1DB14B005E339B /* HomeView.swift in Sources */,
-				24C219F72C1BD09F005E339B /* ContentView.swift in Sources */,
 				24C21A2C2C1DB125005E339B /* ProfileView.swift in Sources */,
 				24C21A342C1DB489005E339B /* AppScreenController.swift in Sources */,
 				24C21A262C1BD1F1005E339B /* AppTab.swift in Sources */,

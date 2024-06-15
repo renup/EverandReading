@@ -17,15 +17,15 @@ enum AppTab: CaseIterable, Identifiable, Hashable {
     var tabLabel: some View {
         switch self {
         case .home:
-            Label("Home", image: "home")
+            Label("Home", systemImage: "house")
         case .topCharts:
-            Label("Top Charts", image: "charts")
+            Label("Top Charts", systemImage: "chart.line.uptrend.xyaxis")
         case .search:
-            Label("Search", image: "magnifyingglass")
+            Label("Search", systemImage: "magnifyingglass")
         case .saved:
-            Label("Saved", image: "bookmark")
+            Label("Saved", systemImage: "bookmark")
         case .account:
-            Label("Account", image: "person")
+            Label("Account", systemImage: "person")
         }
     }
     
