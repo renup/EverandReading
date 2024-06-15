@@ -20,7 +20,6 @@
 		24C21A2E2C1DB131005E339B /* SavedMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A2D2C1DB131005E339B /* SavedMaterialView.swift */; };
 		24C21A302C1DB13F005E339B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A2F2C1DB13F005E339B /* SearchView.swift */; };
 		24C21A322C1DB14B005E339B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A312C1DB14B005E339B /* HomeView.swift */; };
-		24C21A342C1DB489005E339B /* AppScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A332C1DB489005E339B /* AppScreenController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		24C21A2D2C1DB131005E339B /* SavedMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMaterialView.swift; sourceTree = "<group>"; };
 		24C21A2F2C1DB13F005E339B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		24C21A312C1DB14B005E339B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		24C21A332C1DB489005E339B /* AppScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +165,6 @@
 			children = (
 				24C21A222C1BD1C7005E339B /* AppTabView.swift */,
 				24C21A252C1BD1F1005E339B /* AppTab.swift */,
-				24C21A332C1DB489005E339B /* AppScreenController.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -336,7 +333,6 @@
 			files = (
 				24C21A322C1DB14B005E339B /* HomeView.swift in Sources */,
 				24C21A2C2C1DB125005E339B /* ProfileView.swift in Sources */,
-				24C21A342C1DB489005E339B /* AppScreenController.swift in Sources */,
 				24C21A262C1BD1F1005E339B /* AppTab.swift in Sources */,
 				24C21A212C1BD18D005E339B /* TopChartsListView.swift in Sources */,
 				24C21A302C1DB13F005E339B /* SearchView.swift in Sources */,
