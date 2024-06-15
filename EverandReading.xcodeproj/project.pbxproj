@@ -20,6 +20,9 @@
 		24C21A2E2C1DB131005E339B /* SavedMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A2D2C1DB131005E339B /* SavedMaterialView.swift */; };
 		24C21A302C1DB13F005E339B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A2F2C1DB13F005E339B /* SearchView.swift */; };
 		24C21A322C1DB14B005E339B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A312C1DB14B005E339B /* HomeView.swift */; };
+		24C21A372C1DCB93005E339B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A362C1DCB93005E339B /* Book.swift */; };
+		24C21A392C1DD016005E339B /* TopChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A382C1DD016005E339B /* TopChartsViewModel.swift */; };
+		24C21A3D2C1DD04A005E339B /* TopChartsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		24C21A2D2C1DB131005E339B /* SavedMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMaterialView.swift; sourceTree = "<group>"; };
 		24C21A2F2C1DB13F005E339B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		24C21A312C1DB14B005E339B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		24C21A362C1DCB93005E339B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		24C21A382C1DD016005E339B /* TopChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartsViewModel.swift; sourceTree = "<group>"; };
+		24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,8 @@
 		24C219F32C1BD09F005E339B /* EverandReading */ = {
 			isa = PBXGroup;
 			children = (
+				24C21A3A2C1DD024005E339B /* Network */,
+				24C21A352C1DCA88005E339B /* Models */,
 				24C21A1E2C1BD16D005E339B /* Screens */,
 				24C219F42C1BD09F005E339B /* EverandReadingApp.swift */,
 				24C219F82C1BD0A1005E339B /* Assets.xcassets */,
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				24C21A202C1BD18D005E339B /* TopChartsListView.swift */,
+				24C21A382C1DD016005E339B /* TopChartsViewModel.swift */,
 			);
 			path = TopCharts;
 			sourceTree = "<group>";
@@ -199,6 +208,30 @@
 				24C21A2B2C1DB125005E339B /* ProfileView.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		24C21A352C1DCA88005E339B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24C21A362C1DCB93005E339B /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		24C21A3A2C1DD024005E339B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				24C21A3B2C1DD02E005E339B /* TopChartsRepository */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		24C21A3B2C1DD02E005E339B /* TopChartsRepository */ = {
+			isa = PBXGroup;
+			children = (
+				24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */,
+			);
+			path = TopChartsRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,8 +367,11 @@
 				24C21A322C1DB14B005E339B /* HomeView.swift in Sources */,
 				24C21A2C2C1DB125005E339B /* ProfileView.swift in Sources */,
 				24C21A262C1BD1F1005E339B /* AppTab.swift in Sources */,
+				24C21A392C1DD016005E339B /* TopChartsViewModel.swift in Sources */,
+				24C21A3D2C1DD04A005E339B /* TopChartsRepository.swift in Sources */,
 				24C21A212C1BD18D005E339B /* TopChartsListView.swift in Sources */,
 				24C21A302C1DB13F005E339B /* SearchView.swift in Sources */,
+				24C21A372C1DCB93005E339B /* Book.swift in Sources */,
 				24C21A232C1BD1C7005E339B /* AppTabView.swift in Sources */,
 				24C219F52C1BD09F005E339B /* EverandReadingApp.swift in Sources */,
 				24C21A2E2C1DB131005E339B /* SavedMaterialView.swift in Sources */,
