@@ -9,9 +9,10 @@ import SwiftUI
 
 struct TopChartsListView: View {
     @State var viewModel = TopChartsViewModel()
+    @State private var selectedFacet: Facets?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             header
             facets
             bookList
@@ -23,23 +24,48 @@ struct TopChartsListView: View {
     
     @ViewBuilder
     private var header: some View {
-        VStack {
+        VStack(spacing: 8) {
             Text("Top Charts")
-            Text("The most popular books and audio books generating buzz from critics, NYT, and more")
+                .font(.title)
+                .foregroundColor(Color.primary)
+            
+            
+            HStack {
+                Text("The most popular books and audio books generating buzz from critics, NYT, and more")
+                    .font(.body)
+                    .foregroundColor(Color.primary)
+                Spacer()
+            }
         }
+        .padding()
     }
     
     private var facets: some View {
         HStack(spacing: 8) {
             ForEach(Facets.allCases) { facet in
                 Button {
-                    print("facet tapped")
+                    selectedFacet = facet
+                    print("Facet tapped: \(facet.rawValue)")
                 } label: {
                     Text(facet.rawValue.capitalized)
+                        .font(.body)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 8)
+                        .background(
+                            Capsule()
+                                .fill(selectedFacet == facet ? Color.primary : Color.clear)
+                        )
+                        .foregroundColor(selectedFacet == facet ? Color(.systemBackground) : Color.primary)
+                        .overlay(
+                            Capsule()
+                                .stroke(Color.primary, lineWidth: 1)
+                        )
                 }
-                .clipShape(Capsule())
             }
+            Spacer()
         }
+        .padding(.horizontal)
+        .padding(.bottom, 10)
     }
     
     @ViewBuilder
