@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TopChartsListView: View {
     @State var viewModel = TopChartsViewModel()
-    let imageDomain = "https://example.com/images/"
     
     var body: some View {
         VStack {
@@ -53,15 +52,17 @@ struct TopChartsListView: View {
                             .font(.headline)
                             .frame(width: 30)
                         
-                        AsyncImage(url: URL(string: imageDomain + book.thumbnail)) { image in
+                        AsyncImage(url: URL(string: book.thumbnail)) { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 120)
+                                .cornerRadius(10)
                         } placeholder: {
                             Rectangle()
                                 .foregroundColor(.gray.opacity(0.2))
                                 .frame(width: 80, height: 120)
+                                .cornerRadius(10)
                         }
                         
                         bookDetails(book)
