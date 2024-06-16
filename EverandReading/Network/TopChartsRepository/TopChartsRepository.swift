@@ -17,9 +17,10 @@ class DefaultTopChartsRepository: TopChartsRepository {
     func fetchTopCharts() async throws -> [Book] {
         try await Task.sleep(nanoseconds: 2_000_000_000) // 2 seconds delay
 
-        if Bool.random() {
-            throw URLError(.badServerResponse)
-        }
+        // TODO: uncomment this after finishing the task
+//        if Bool.random() {
+//            throw URLError(.badServerResponse)
+//        }
         
         return Book.sampleData()
     }

@@ -11,6 +11,14 @@ enum AsyncState {
     case initial, loading, loaded, error
 }
 
+enum Facets: String, CaseIterable, Hashable, Identifiable {
+    var id: Facets {
+        return self
+    }
+    
+    case formats, categories
+}
+
 @Observable
 class TopChartsViewModel {
     var books = [Book]()
