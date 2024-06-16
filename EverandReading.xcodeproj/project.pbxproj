@@ -62,6 +62,7 @@
 		24C21A362C1DCB93005E339B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		24C21A382C1DD016005E339B /* TopChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartsViewModel.swift; sourceTree = "<group>"; };
 		24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartsRepository.swift; sourceTree = "<group>"; };
+		24C21A3E2C1EDB10005E339B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 		24C219F32C1BD09F005E339B /* EverandReading */ = {
 			isa = PBXGroup;
 			children = (
+				24C21A3E2C1EDB10005E339B /* Info.plist */,
 				24C21A3A2C1DD024005E339B /* Network */,
 				24C21A352C1DCA88005E339B /* Models */,
 				24C21A1E2C1BD16D005E339B /* Screens */,
@@ -541,6 +543,7 @@
 				DEVELOPMENT_TEAM = L88M38NBF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EverandReading/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -570,6 +573,7 @@
 				DEVELOPMENT_TEAM = L88M38NBF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EverandReading/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

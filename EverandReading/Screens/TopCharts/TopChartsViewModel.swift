@@ -34,10 +34,14 @@ class TopChartsViewModel {
         Task {
             do {
                 let books = try await topChartsRepository.fetchTopCharts()
-                self.books = books
-                state = .loaded
+                await MainActor.run {
+                    self.books = books
+                    state = .loaded
+                }
             } catch {
-                state = .error
+                await MainActor.run {
+                    state = .error
+                }
             }
         }
     }
