@@ -100,8 +100,77 @@ extension Book {
                 stars: 4.5,
                 author: "Aldous Huxley",
                 type: .ebook
+            ),
+            Book(
+                title: "The Handmaid's Tale",
+                thumbnail: "https://m.media-amazon.com/images/I/41l2PrOojVL.jpg",
+                stars: 4.4,
+                author: "Margaret Atwood",
+                type: .ebook
+            ),
+            Book(
+                title: "The Hunger Games",
+                thumbnail: "https://m.media-amazon.com/images/I/41gCCCrVRdL.jpg",
+                stars: 4.7,
+                author: "Suzanne Collins",
+                type: .audiobook
+            ),
+            Book(
+                title: "The Da Vinci Code",
+                thumbnail: "https://m.media-amazon.com/images/I/51MDLTJcWbL.jpg",
+                stars: 4.2,
+                author: "Dan Brown",
+                type: .ebook
+            ),
+            Book(
+                title: "The Girl with the Dragon Tattoo",
+                thumbnail: "https://m.media-amazon.com/images/I/51EzrauCJaL.jpg",
+                stars: 4.5,
+                author: "Stieg Larsson",
+                type: .audiobook
+            ),
+            Book(
+                title: "The Kite Runner",
+                thumbnail: "https://m.media-amazon.com/images/I/51vRNqL61aL.jpg",
+                stars: 4.6,
+                author: "Khaled Hosseini",
+                type: .ebook
+            ),
+            Book(
+                title: "The Picture of Dorian Gray",
+                thumbnail: "https://m.media-amazon.com/images/I/51kqFTH4xtL.jpg",
+                stars: 4.4,
+                author: "Oscar Wilde",
+                type: .ebook
+            ),
+            Book(
+                title: "The Road",
+                thumbnail: "https://m.media-amazon.com/images/I/51A6N8mCvWL.jpg",
+                stars: 4.3,
+                author: "Cormac McCarthy",
+                type: .audiobook
+            ),
+            Book(
+                title: "The Alchemist",
+                thumbnail: "https://m.media-amazon.com/images/I/516c6gUQLaL.jpg",
+                stars: 4.7,
+                author: "Paulo Coelho",
+                type: .ebook
+            ),
+            Book(
+                title: "The Hobbit",
+                thumbnail: "https://m.media-amazon.com/images/I/51uLvJlKpNL._SX331_BO1,204,203,200_.jpg",
+                stars: 4.8,
+                author: "J.R.R. Tolkien",
+                type: .audiobook
+            ),
+            Book(
+                title: "The Martian",
+                thumbnail: "https://m.media-amazon.com/images/I/51dFpo9h0JL.jpg",
+                stars: 4.6,
+                author: "Andy Weir",
+                type: .ebook
             )
         ]
-        
     }
 }
