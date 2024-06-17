@@ -35,21 +35,32 @@ class TopChartsViewModel {
     
     func pullAllBooks() {
         state = .loading
-        Task {
+        Task { [weak self] in
+            guard let self = self else { return }
             do {
-                let books = try await topChartsRepository.fetchTopCharts()
+                let books = try await self.topChartsRepository.fetchTopCharts()
                 await MainActor.run {
                     self.books = books
-                    state = .loaded
+                    self.state = .loaded
                 }
             } catch {
-                await MainActor.run {
-                    state = .error
+                do {
+                    try await RetryHandler.retry(maxAttempts: 2) { [weak self] in
+                        guard let self = self else { throw CancellationError() }
+                        let books = try await self.topChartsRepository.fetchTopCharts()
+                        await MainActor.run {
+                            self.books = books
+                            self.state = .loaded
+                        }
+                    }
+                } catch {
+                    await MainActor.run {
+                        self.state = .error
+                    }
                 }
             }
         }
     }
-    
     func showBooks() -> [Book] {
         if selectedBookTypes.count >= 1 && applyButtonTap {
             return filteredBooks

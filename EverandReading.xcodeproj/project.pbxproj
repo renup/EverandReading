@@ -25,6 +25,7 @@
 		24C21A3D2C1DD04A005E339B /* TopChartsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */; };
 		24C21A412C1FBDE4005E339B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A402C1FBDE4005E339B /* ErrorView.swift */; };
 		24C21A442C206B01005E339B /* CategoriesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A432C206B01005E339B /* CategoriesSheet.swift */; };
+		24C21A462C20DC29005E339B /* RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A452C20DC29005E339B /* RetryHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		24C21A3E2C1EDB10005E339B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		24C21A402C1FBDE4005E339B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		24C21A432C206B01005E339B /* CategoriesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSheet.swift; sourceTree = "<group>"; };
+		24C21A452C20DC29005E339B /* RetryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				24C21A402C1FBDE4005E339B /* ErrorView.swift */,
+				24C21A452C20DC29005E339B /* RetryHandler.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				24C21A322C1DB14B005E339B /* HomeView.swift in Sources */,
 				24C21A2C2C1DB125005E339B /* ProfileView.swift in Sources */,
 				24C21A262C1BD1F1005E339B /* AppTab.swift in Sources */,
+				24C21A462C20DC29005E339B /* RetryHandler.swift in Sources */,
 				24C21A392C1DD016005E339B /* TopChartsViewModel.swift in Sources */,
 				24C21A3D2C1DD04A005E339B /* TopChartsRepository.swift in Sources */,
 				24C21A212C1BD18D005E339B /* TopChartsListView.swift in Sources */,

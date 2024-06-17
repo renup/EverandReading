@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ErrorView: View {
+    let retryClosure: () -> Void?
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             HStack(spacing: 8) {
@@ -24,6 +26,19 @@ struct ErrorView: View {
                 .font(.title)
             Text("Try again later")
                 .font(.title)
+                .padding(.bottom, 10)
+            
+            Button {
+                retryClosure()
+            } label: {
+                Text("Retry")
+                    .font(.title).bold()
+                    .padding()
+                    .foregroundColor(.primary)
+                    .background(.blue)
+                    .cornerRadius(10)
+            }
+
         }
         .foregroundColor(.primary)
 
@@ -31,5 +46,5 @@ struct ErrorView: View {
 }
 
 #Preview {
-    ErrorView()
+    ErrorView(retryClosure: {} )
 }

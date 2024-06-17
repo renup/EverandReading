@@ -18,7 +18,7 @@ struct TopChartsListView: View {
             case .loaded:
                 content
             case .error:
-                ErrorView()
+                ErrorView(retryClosure: viewModel.pullAllBooks)
             }
         }
         .onAppear {

@@ -15,12 +15,11 @@ class DefaultTopChartsRepository: TopChartsRepository {
     static let shared = DefaultTopChartsRepository()
     
     func fetchTopCharts() async throws -> [Book] {
-        try await Task.sleep(nanoseconds: 2_000_000_000) // 2 seconds delay
+        try await Task.sleep(nanoseconds: 1_000_000_000) // 2 seconds delay
 
-        // TODO: uncomment this after finishing the task
-//        if Bool.random() {
-//            throw URLError(.badServerResponse)
-//        }
+        if Bool.random() {
+            throw URLError(.badServerResponse)
+        }
         
         return Book.sampleData()
     }
