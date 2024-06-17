@@ -10,6 +10,9 @@ import SwiftUI
 struct TopChartsListView: View {
     @State var viewModel = TopChartsViewModel()
     @State private var selectedFacet: Facets?
+    @State private var formatsFacetTap = false
+    @State private var applyButtonTap = false
+    @State private var selectedBookTypes: Set<BookType> = []
     
     var body: some View {
         VStack(spacing: 8) {
@@ -20,23 +23,96 @@ struct TopChartsListView: View {
         .onAppear {
             viewModel.pullAllBooks()
         }
+        .sheet(isPresented: $formatsFacetTap, content: {
+            filterSheet
+                .presentationDetents([.fraction(0.3)])
+        })
     }
+    
+    @ViewBuilder
+    private var filterSheet: some View {
+        VStack(spacing: 16) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Formats")
+                        .font(.headline)
+                    Text("Clear All")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .onTapGesture {
+                            selectedBookTypes = []
+                        }
+                }
+                Spacer()
+                Button {
+                    formatsFacetTap = false
+                    selectedFacet = nil
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+            }
+
+            ForEach(BookType.allCases) { bookType in
+                HStack {
+                    Text(bookType.rawValue.capitalized)
+                    Spacer()
+                    Button {
+                        if selectedBookTypes.contains(bookType) {
+                                               selectedBookTypes.remove(bookType)
+                                           } else {
+                                               selectedBookTypes.insert(bookType)
+                                           }
+                    } label: {
+                        Image(systemName: selectedBookTypes.contains(bookType) ? "checkmark.square" : "square")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                }
+            }
+
+            Button {
+                applyButtonTap.toggle()
+                formatsFacetTap = false
+                selectedFacet = nil 
+            } label: {
+                Text("Apply")
+                    .font(.body)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 12)
+                    .foregroundColor(applyButtonTap ? Color(.systemBackground) : Color.primary)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(applyButtonTap ? Color.primary : Color.clear)
+                    )
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(applyButtonTap ? Color(.systemBackground) : Color.primary, lineWidth: 1)
+                    )
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(16)
+        .foregroundColor(Color.primary)
+    }
+    
     
     @ViewBuilder
     private var header: some View {
         VStack(spacing: 8) {
             Text("Top Charts")
                 .font(.title)
-                .foregroundColor(Color.primary)
-            
             
             HStack {
                 Text("The most popular books and audio books generating buzz from critics, NYT, and more")
                     .font(.body)
-                    .foregroundColor(Color.primary)
                 Spacer()
             }
         }
+        .foregroundColor(Color.primary)
         .padding()
     }
     
@@ -45,7 +121,9 @@ struct TopChartsListView: View {
             ForEach(Facets.allCases) { facet in
                 Button {
                     selectedFacet = facet
-                    print("Facet tapped: \(facet.rawValue)")
+                    if facet == .formats {
+                        formatsFacetTap.toggle()
+                    }
                 } label: {
                     Text(facet.rawValue.capitalized)
                         .font(.body)
@@ -134,6 +212,9 @@ struct TopChartsListView: View {
         }
     }
 }
+
+
+
 #Preview {
     TopChartsListView()
 }

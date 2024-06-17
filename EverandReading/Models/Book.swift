@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum BookType {
+enum BookType: String, CaseIterable, Hashable, Identifiable {
+    var id: BookType { return self }
+    
     case ebook, audiobook
 }
 
