@@ -15,6 +15,18 @@ struct TopChartsListView: View {
     @State private var selectedBookTypes: Set<BookType> = []
     
     var body: some View {
+        switch viewModel.state {
+        case .initial, .loading:
+            ProgressView()
+        case .loaded:
+            content
+        case .error:
+            ErrorView()
+        }
+    }
+    
+    @ViewBuilder
+    private var content: some View {
         VStack(spacing: 8) {
             header
             facets
@@ -75,7 +87,7 @@ struct TopChartsListView: View {
             Button {
                 applyButtonTap.toggle()
                 formatsFacetTap = false
-                selectedFacet = nil 
+                selectedFacet = nil
             } label: {
                 Text("Apply")
                     .font(.body)

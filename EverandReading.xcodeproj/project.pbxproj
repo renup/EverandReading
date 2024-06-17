@@ -23,6 +23,7 @@
 		24C21A372C1DCB93005E339B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A362C1DCB93005E339B /* Book.swift */; };
 		24C21A392C1DD016005E339B /* TopChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A382C1DD016005E339B /* TopChartsViewModel.swift */; };
 		24C21A3D2C1DD04A005E339B /* TopChartsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */; };
+		24C21A412C1FBDE4005E339B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A402C1FBDE4005E339B /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		24C21A382C1DD016005E339B /* TopChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartsViewModel.swift; sourceTree = "<group>"; };
 		24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartsRepository.swift; sourceTree = "<group>"; };
 		24C21A3E2C1EDB10005E339B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		24C21A402C1FBDE4005E339B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		24C219F32C1BD09F005E339B /* EverandReading */ = {
 			isa = PBXGroup;
 			children = (
+				24C21A3F2C1FBDD3005E339B /* Shared */,
 				24C21A3E2C1EDB10005E339B /* Info.plist */,
 				24C21A3A2C1DD024005E339B /* Network */,
 				24C21A352C1DCA88005E339B /* Models */,
@@ -234,6 +237,14 @@
 				24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */,
 			);
 			path = TopChartsRepository;
+			sourceTree = "<group>";
+		};
+		24C21A3F2C1FBDD3005E339B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				24C21A402C1FBDE4005E339B /* ErrorView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +384,7 @@
 				24C21A3D2C1DD04A005E339B /* TopChartsRepository.swift in Sources */,
 				24C21A212C1BD18D005E339B /* TopChartsListView.swift in Sources */,
 				24C21A302C1DB13F005E339B /* SearchView.swift in Sources */,
+				24C21A412C1FBDE4005E339B /* ErrorView.swift in Sources */,
 				24C21A372C1DCB93005E339B /* Book.swift in Sources */,
 				24C21A232C1BD1C7005E339B /* AppTabView.swift in Sources */,
 				24C219F52C1BD09F005E339B /* EverandReadingApp.swift in Sources */,
