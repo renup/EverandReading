@@ -61,11 +61,9 @@ class TopChartsViewModel {
     }
     
     func filterBooks() {
-        var result = [Book]()
-        for ele in selectedBookTypes {
-            result.append(contentsOf: books.filter { $0.type == ele })
+        filteredBooks = books.filter { book in
+            selectedBookTypes.contains(book.type)
         }
-       filteredBooks = result
     }
     
     func resetFilters() {
