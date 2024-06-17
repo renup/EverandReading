@@ -10,18 +10,21 @@ import SwiftUI
 struct TopChartsListView: View {
     @State var viewModel = TopChartsViewModel()
     @State private var selectedFacet: Facets?
-    @State private var formatsFacetTap = false
-    @State private var applyButtonTap = false
-    @State private var selectedBookTypes: Set<BookType> = []
+//    @State private var formatsFacetTap = false
     
     var body: some View {
-        switch viewModel.state {
-        case .initial, .loading:
-            ProgressView()
-        case .loaded:
-            content
-        case .error:
-            ErrorView()
+        NavigationView {
+            switch viewModel.state {
+            case .initial, .loading:
+                ProgressView()
+            case .loaded:
+                content
+            case .error:
+                ErrorView()
+            }
+        }
+        .onAppear {
+            viewModel.pullAllBooks()
         }
     }
     
@@ -32,13 +35,16 @@ struct TopChartsListView: View {
             facets
             bookList
         }
-        .onAppear {
-            viewModel.pullAllBooks()
-        }
-        .sheet(isPresented: $formatsFacetTap, content: {
-            filterSheet
-                .presentationDetents([.fraction(0.3)])
+        .sheet(item: $selectedFacet, content: { facet in
+            if facet == .formats {
+                filterSheet
+                    .presentationDetents([.fraction(0.3)])
+            }
         })
+//        .sheet(isPresented: $fo, content: {
+//            filterSheet
+//                .presentationDetents([.fraction(0.3)])
+//        })
     }
     
     @ViewBuilder
@@ -52,12 +58,12 @@ struct TopChartsListView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                         .onTapGesture {
-                            selectedBookTypes = []
+                            viewModel.selectedBookTypes = []
+                            viewModel.resetFilters()
                         }
                 }
                 Spacer()
                 Button {
-                    formatsFacetTap = false
                     selectedFacet = nil
                 } label: {
                     Image(systemName: "xmark.circle")
@@ -71,13 +77,13 @@ struct TopChartsListView: View {
                     Text(bookType.rawValue.capitalized)
                     Spacer()
                     Button {
-                        if selectedBookTypes.contains(bookType) {
-                                               selectedBookTypes.remove(bookType)
+                        if viewModel.selectedBookTypes.contains(bookType) {
+                            viewModel.selectedBookTypes.remove(bookType)
                                            } else {
-                                               selectedBookTypes.insert(bookType)
+                                               viewModel.selectedBookTypes.insert(bookType)
                                            }
                     } label: {
-                        Image(systemName: selectedBookTypes.contains(bookType) ? "checkmark.square" : "square")
+                        Image(systemName: viewModel.selectedBookTypes.contains(bookType) ? "checkmark.square" : "square")
                             .resizable()
                             .frame(width: 20, height: 20)
                     }
@@ -85,23 +91,24 @@ struct TopChartsListView: View {
             }
 
             Button {
-                applyButtonTap.toggle()
-                formatsFacetTap = false
-                selectedFacet = nil
+                viewModel.resetFilters()
+                selectedFacet = nil // change the formats facet back to its default un-tap state
+                viewModel.applyButtonTap = true
+                viewModel.filterBooks()
             } label: {
                 Text("Apply")
                     .font(.body)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 12)
-                    .foregroundColor(applyButtonTap ? Color(.systemBackground) : Color.primary)
+                    .foregroundColor(viewModel.applyButtonTap ? Color(.systemBackground) : Color.primary)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(applyButtonTap ? Color.primary : Color.clear)
+                            .fill(viewModel.applyButtonTap ? Color.primary : Color.clear)
                     )
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(applyButtonTap ? Color(.systemBackground) : Color.primary, lineWidth: 1)
+                            .stroke(viewModel.applyButtonTap ? Color(.systemBackground) : Color.primary, lineWidth: 1)
                     )
             }
         }
@@ -133,9 +140,6 @@ struct TopChartsListView: View {
             ForEach(Facets.allCases) { facet in
                 Button {
                     selectedFacet = facet
-                    if facet == .formats {
-                        formatsFacetTap.toggle()
-                    }
                 } label: {
                     Text(facet.rawValue.capitalized)
                         .font(.body)
@@ -160,9 +164,9 @@ struct TopChartsListView: View {
     
     @ViewBuilder
     private var bookList: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             LazyVStack(alignment: .leading, spacing: 16) {
-                ForEach(Array(viewModel.books.enumerated()), id: \.element.id) { index, book in
+                ForEach(Array(viewModel.showBooks().enumerated()), id: \.element.id) { index, book in
                     HStack(alignment: .top, spacing: 16) {
                         Text("\(index + 1).")
                             .font(.headline)

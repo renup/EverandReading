@@ -24,6 +24,9 @@ class TopChartsViewModel {
     var books = [Book]()
     let topChartsRepository: TopChartsRepository
     var state: AsyncState = .initial
+    var filteredBooks: [Book] = []
+    var selectedBookTypes: Set<BookType> = []
+    var applyButtonTap = false
     
     init(topChartsRepository: TopChartsRepository = DefaultTopChartsRepository.shared) {
         self.topChartsRepository = topChartsRepository
@@ -44,5 +47,25 @@ class TopChartsViewModel {
                 }
             }
         }
+    }
+    
+    func showBooks() -> [Book] {
+        if selectedBookTypes.count >= 1 && applyButtonTap {
+            return filteredBooks
+        }
+        return books
+    }
+    
+    func filterBooks() {
+        var result = [Book]()
+        for ele in selectedBookTypes {
+            result.append(contentsOf: books.filter { $0.type == ele })
+        }
+       filteredBooks = result
+    }
+    
+    func resetFilters() {
+        filteredBooks = []
+        applyButtonTap = false
     }
 }
