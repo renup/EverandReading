@@ -9,7 +9,12 @@ Provides a clean and intuitive user interface
 Utilizes asynchronous data loading for improved performance
 
 Screenshots
-[Include relevant screenshots of your app's user interface]
+
+
+https://github.com/renup/EverandReading/assets/1608883/0c9232ad-c3a2-4cb0-b126-8c0533bcd064
+
+
+
 Architecture
 The Top Charts App follows a simple MVVM (Model-View-ViewModel) architecture pattern. The main components of the app are:
 
