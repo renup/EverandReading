@@ -139,6 +139,7 @@ struct TopChartsListView: View {
         HStack(spacing: 8) {
             ForEach(Facets.allCases) { facet in
                 Button {
+                    viewModel.applyButtonTap = false
                     selectedFacet = facet
                 } label: {
                     Text(facet.rawValue.capitalized)
