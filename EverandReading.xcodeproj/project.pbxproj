@@ -24,6 +24,7 @@
 		24C21A392C1DD016005E339B /* TopChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A382C1DD016005E339B /* TopChartsViewModel.swift */; };
 		24C21A3D2C1DD04A005E339B /* TopChartsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */; };
 		24C21A412C1FBDE4005E339B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A402C1FBDE4005E339B /* ErrorView.swift */; };
+		24C21A442C206B01005E339B /* CategoriesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C21A432C206B01005E339B /* CategoriesSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		24C21A3C2C1DD04A005E339B /* TopChartsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopChartsRepository.swift; sourceTree = "<group>"; };
 		24C21A3E2C1EDB10005E339B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		24C21A402C1FBDE4005E339B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		24C21A432C206B01005E339B /* CategoriesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		24C21A1F2C1BD177005E339B /* TopCharts */ = {
 			isa = PBXGroup;
 			children = (
+				24C21A422C206AE5005E339B /* BottomSheet */,
 				24C21A202C1BD18D005E339B /* TopChartsListView.swift */,
 				24C21A382C1DD016005E339B /* TopChartsViewModel.swift */,
 			);
@@ -245,6 +248,14 @@
 				24C21A402C1FBDE4005E339B /* ErrorView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		24C21A422C206AE5005E339B /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				24C21A432C206B01005E339B /* CategoriesSheet.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 				24C21A302C1DB13F005E339B /* SearchView.swift in Sources */,
 				24C21A412C1FBDE4005E339B /* ErrorView.swift in Sources */,
 				24C21A372C1DCB93005E339B /* Book.swift in Sources */,
+				24C21A442C206B01005E339B /* CategoriesSheet.swift in Sources */,
 				24C21A232C1BD1C7005E339B /* AppTabView.swift in Sources */,
 				24C219F52C1BD09F005E339B /* EverandReadingApp.swift in Sources */,
 				24C21A2E2C1DB131005E339B /* SavedMaterialView.swift in Sources */,

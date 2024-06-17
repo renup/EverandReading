@@ -27,7 +27,8 @@ class TopChartsViewModel {
     var filteredBooks: [Book] = []
     var selectedBookTypes: Set<BookType> = []
     var applyButtonTap = false
-    
+    var selectedFacet: Facets?
+
     init(topChartsRepository: TopChartsRepository = DefaultTopChartsRepository.shared) {
         self.topChartsRepository = topChartsRepository
     }
@@ -51,6 +52,9 @@ class TopChartsViewModel {
     
     func showBooks() -> [Book] {
         if selectedBookTypes.count >= 1 && applyButtonTap {
+            return filteredBooks
+        } else if selectedBookTypes.count >= 1 && selectedFacet == nil { // there is some filter selection but the "x" button on the sheet is pressed.
+            filterBooks() // reset the filteredBooks array in case the selection is changed
             return filteredBooks
         }
         return books

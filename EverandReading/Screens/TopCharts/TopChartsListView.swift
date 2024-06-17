@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TopChartsListView: View {
     @State var viewModel = TopChartsViewModel()
-    @State private var selectedFacet: Facets?
-//    @State private var formatsFacetTap = false
     
     var body: some View {
         NavigationView {
@@ -35,16 +33,15 @@ struct TopChartsListView: View {
             facets
             bookList
         }
-        .sheet(item: $selectedFacet, content: { facet in
+        .sheet(item: $viewModel.selectedFacet) { facet in
             if facet == .formats {
                 filterSheet
                     .presentationDetents([.fraction(0.3)])
+            } else {
+                CategoriesSheet()
+                    .presentationDetents([.fraction(0.3)])
             }
-        })
-//        .sheet(isPresented: $fo, content: {
-//            filterSheet
-//                .presentationDetents([.fraction(0.3)])
-//        })
+        }
     }
     
     @ViewBuilder
@@ -64,7 +61,7 @@ struct TopChartsListView: View {
                 }
                 Spacer()
                 Button {
-                    selectedFacet = nil
+                    viewModel.selectedFacet = nil
                 } label: {
                     Image(systemName: "xmark.circle")
                         .resizable()
@@ -92,9 +89,9 @@ struct TopChartsListView: View {
 
             Button {
                 viewModel.resetFilters()
-                selectedFacet = nil // change the formats facet back to its default un-tap state
                 viewModel.applyButtonTap = true
                 viewModel.filterBooks()
+                viewModel.selectedFacet = nil // change the formats facet back to its default un-tap state and close the sheet
             } label: {
                 Text("Apply")
                     .font(.body)
@@ -140,7 +137,7 @@ struct TopChartsListView: View {
             ForEach(Facets.allCases) { facet in
                 Button {
                     viewModel.applyButtonTap = false
-                    selectedFacet = facet
+                    viewModel.selectedFacet = facet
                 } label: {
                     Text(facet.rawValue.capitalized)
                         .font(.body)
@@ -148,9 +145,9 @@ struct TopChartsListView: View {
                         .padding(.vertical, 8)
                         .background(
                             Capsule()
-                                .fill(selectedFacet == facet ? Color.primary : Color.clear)
+                                .fill(viewModel.selectedFacet == facet ? Color.primary : Color.clear)
                         )
-                        .foregroundColor(selectedFacet == facet ? Color(.systemBackground) : Color.primary)
+                        .foregroundColor(viewModel.selectedFacet == facet ? Color(.systemBackground) : Color.primary)
                         .overlay(
                             Capsule()
                                 .stroke(Color.primary, lineWidth: 1)
